@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111111">
+
+    <title>Arithmetic Calculator | Nadim Patel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">N</span>
+            <span>STUDIO<span class="gold">.</span></span>
+        </a>
+
+        <div class="top-actions">
+            <button id="soundToggle" class="icon-btn" title="Toggle sound" aria-label="Toggle sound">♪</button>
+            <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-layout">
+
+        <section class="calculator-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PRECISION MEETS SIMPLICITY</p>
+                    <h1>Calculator<span class="gold">.</span></h1>
+                    <p class="subtitle">An elegant space for every calculation.</p>
+                </div>
+
+                <span class="version">01 / 2026</span>
+            </div>
+
+            <!-- CALCULATOR -->
+            <div class="calculator-card">
+
+                <div class="calculator-toolbar">
+                    <span class="calculator-label">STANDARD CALCULATOR</span>
+
+                    <button id="modeToggle" class="mode-btn">
+                        SCIENTIFIC <span>＋</span>
+                    </button>
+                </div>
+
+                <!-- DISPLAY -->
+                <div class="display-area">
+
+                    <div class="display-meta">
+                        <span id="angleMode">DEG</span>
+                        <button id="copyBtn" class="copy-btn">
+                            <span>▢</span> COPY RESULT
+                        </button>
+                    </div>
+
+                    <div id="expression" class="expression"></div>
+
+                    <input
+                        type="text"
+                        id="display"
+                        value="0"
+                        readonly
+                        aria-label="Calculator result"
+                    >
+
+                    <div id="statusMessage" class="status-message" aria-live="polite"></div>
+
+                </div>
+
+                <!-- SCIENTIFIC BUTTONS -->
+                <div id="scientificButtons" class="scientific-grid hidden">
+
+                    <button data-insert="sin(">sin</button>
+                    <button data-insert="cos(">cos</button>
+                    <button data-insert="tan(">tan</button>
+                    <button data-insert="log(">log</button>
+                    <button data-insert="ln(">ln</button>
+
+                    <button data-insert="sqrt(">√</button>
+                    <button data-insert="^2">x²</button>
+                    <button data-insert="^">xʸ</button>
+                    <button data-insert="(">(</button>
+                    <button data-insert=")">)</button>
+
+                    <button data-insert="pi">π</button>
+                    <button data-insert="e">e</button>
+                    <button id="angleToggle">DEG/RAD</button>
+                    <button data-action="factorial">n!</button>
+                    <button data-action="backspace">⌫</button>
+
+                </div>
+
+                <!-- STANDARD BUTTONS -->
+                <div class="button-grid">
+
+                    <button class="utility-btn" data-action="clear">AC</button>
+                    <button class="utility-btn" data-action="delete">DEL</button>
+                    <button class="utility-btn" data-action="percent">%</button>
+                    <button class="operator-btn" data-insert="/">÷</button>
+
+                    <button data-insert="7">7</button>
+                    <button data-insert="8">8</button>
+                    <button data-insert="9">9</button>
+                    <button class="operator-btn" data-insert="*">×</button>
+
+                    <button data-insert="4">4</button>
+                    <button data-insert="5">5</button>
+                    <button data-insert="6">6</button>
+                    <button class="operator-btn" data-insert="-">−</button>
+
+                    <button data-insert="1">1</button>
+                    <button data-insert="2">2</button>
+                    <button data-insert="3">3</button>
+                    <button class="operator-btn" data-insert="+">+</button>
+
+                    <button class="utility-btn" data-action="sign">±</button>
+                    <button data-insert="0">0</button>
+                    <button data-insert=".">.</button>
+                    <button class="equals-btn" data-action="calculate">=</button>
+
+                </div>
+
+                <div class="calculator-footer">
+                    <span>DESIGNED FOR CLARITY</span>
+                    <span>● PRECISION MODE</span>
+                </div>
+
+            </div>
+
+            <p class="keyboard-tip">
+                KEYBOARD SUPPORT: 0–9 · + − × ÷ · ENTER · BACKSPACE · ESC
+            </p>
+
+        </section>
+
+        <!-- HISTORY SIDEBAR -->
+        <aside class="history-panel">
+
+            <div class="history-heading">
+                <div>
+                    <p class="eyebrow">YOUR ACTIVITY</p>
+                    <h2>History<span class="gold">.</span></h2>
+                </div>
+
+                <button id="clearHistory" class="clear-history">
+                    CLEAR ALL
+                </button>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <div class="empty-history">
+                    <span>◷</span>
+                    <p>No calculations yet.</p>
+                    <small>Your recent calculations will appear here.</small>
+                </div>
+            </div>
+
+            <div class="history-bottom">
+                <span>CALCULATION HISTORY</span>
+                <span id="historyCount">00 ITEMS</span>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>CRAFTED WITH PRECISION BY <span>NADIM PATEL</span></p>
+        <p>HTML · CSS · JAVASCRIPT</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
